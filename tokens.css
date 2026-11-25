@@ -1,0 +1,185 @@
+/* ─────────────────────────────────────────────────────────────
+   Named Trees — design tokens
+   Warm folk-modern · leafy green primary · marigold + terracotta
+   ───────────────────────────────────────────────────────────── */
+
+:root,
+.theme-light {
+  /* surfaces */
+  --bg:           #F6EFE0;   /* warm cream */
+  --bg-deep:      #EDE3CF;
+  --surface:      #FFFBF1;
+  --surface-2:    #F1E8D2;
+  --surface-soft: #EBE0C6;
+
+  /* ink */
+  --ink:          #1F2A20;
+  --ink-soft:     #3A4A3E;
+  --ink-mute:     #6E7B66;
+  --ink-faint:    #A39C84;
+
+  /* lines */
+  --line:         rgba(31,42,32,0.10);
+  --line-strong:  rgba(31,42,32,0.22);
+
+  /* brand */
+  --leaf:         #2F6A3F;
+  --leaf-deep:    #1F4A2C;
+  --leaf-soft:    #C9DEC6;
+  --leaf-pale:    #E6EFD8;
+
+  --marigold:     #E0A02B;
+  --marigold-soft:#F5DA9F;
+  --marigold-pale:#FBEFC9;
+
+  --terra:        #C25E3F;
+  --terra-soft:   #ECC0A8;
+  --terra-pale:   #F4DDCD;
+
+  --sky:          #4D86A4;
+  --sky-soft:     #C5DBE6;
+
+  --shadow-sm: 0 1px 2px rgba(31,42,32,.06), 0 2px 6px rgba(31,42,32,.04);
+  --shadow-md: 0 2px 6px rgba(31,42,32,.08), 0 8px 24px rgba(31,42,32,.06);
+  --shadow-lg: 0 8px 20px rgba(31,42,32,.10), 0 20px 60px rgba(31,42,32,.10);
+}
+
+.theme-dark {
+  --bg:           #131C16;
+  --bg-deep:      #0C140F;
+  --surface:      #1B2620;
+  --surface-2:    #232F26;
+  --surface-soft: #28342B;
+
+  --ink:          #F2E9D4;
+  --ink-soft:     #D7CDB6;
+  --ink-mute:     #9CA993;
+  --ink-faint:    #6B7869;
+
+  --line:         rgba(242,233,212,0.10);
+  --line-strong:  rgba(242,233,212,0.22);
+
+  --leaf:         #6DBD7D;
+  --leaf-deep:    #93D49F;
+  --leaf-soft:    #2C4A33;
+  --leaf-pale:    #1F3225;
+
+  --marigold:     #F0BA52;
+  --marigold-soft:#5A4318;
+  --marigold-pale:#3A2D10;
+
+  --terra:        #E2876B;
+  --terra-soft:   #56311F;
+  --terra-pale:   #3A2014;
+
+  --sky:          #88B6CA;
+  --sky-soft:     #1F3340;
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.4), 0 2px 6px rgba(0,0,0,.3);
+  --shadow-md: 0 2px 6px rgba(0,0,0,.5), 0 8px 24px rgba(0,0,0,.35);
+  --shadow-lg: 0 8px 20px rgba(0,0,0,.5), 0 20px 60px rgba(0,0,0,.4);
+}
+
+/* ─────────────── Type ─────────────── */
+:root {
+  --font-display: "Bricolage Grotesque", "Georgia", serif;
+  --font-body:    "DM Sans", -apple-system, system-ui, sans-serif;
+  --font-mono:    "JetBrains Mono", "SF Mono", ui-monospace, monospace;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+
+.app-root {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--bg);
+  height: 100%;
+  width: 100%;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─────────────── Atoms ─────────────── */
+.display { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.02em; line-height: 1.05; }
+.mono    { font-family: var(--font-mono); font-feature-settings: "tnum"; letter-spacing: 0; }
+
+button { font-family: inherit; cursor: pointer; border: 0; background: none; color: inherit; padding: 0; }
+input, textarea { font-family: inherit; color: inherit; }
+a { color: inherit; text-decoration: none; }
+
+/* Hide scrollbars inside the device */
+.scroller::-webkit-scrollbar { width: 0; height: 0; }
+.scroller { scrollbar-width: none; }
+
+/* primary green button */
+.btn-leaf {
+  background: var(--leaf); color: #FFFBF1;
+  border-radius: 999px; padding: 16px 22px;
+  font-weight: 600; font-size: 16px;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: transform .12s ease;
+}
+.btn-leaf:active { transform: scale(0.97); }
+.theme-dark .btn-leaf { color: #0C140F; }
+
+.btn-ghost {
+  border: 1px solid var(--line-strong);
+  color: var(--ink);
+  border-radius: 999px; padding: 14px 20px;
+  font-weight: 500; font-size: 15px;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+
+/* photo placeholder — diagonal stripe */
+.photo-slot {
+  position: relative; overflow: hidden;
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--surface-soft) 0 12px,
+    var(--surface-2)    12px 24px
+  );
+  display: flex; align-items: center; justify-content: center;
+}
+.photo-slot .label {
+  font-family: var(--font-mono); font-size: 10px;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--ink-mute);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 4px 8px;
+}
+
+/* tiny chip */
+.chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 10px; border-radius: 999px;
+  font-size: 12px; font-weight: 500;
+  background: var(--surface-2); color: var(--ink-soft);
+}
+.chip.leaf  { background: var(--leaf-pale); color: var(--leaf-deep); }
+.chip.terra { background: var(--terra-pale); color: #6A2E1A; }
+.theme-dark .chip.terra { color: var(--terra); }
+.chip.mari  { background: var(--marigold-pale); color: #6E4F00; }
+.theme-dark .chip.mari  { color: var(--marigold); }
+.chip.sky   { background: var(--sky-soft); color: #2A4D5F; }
+.theme-dark .chip.sky   { color: var(--sky); }
+
+/* card */
+.card {
+  background: var(--surface);
+  border-radius: 22px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* sectioned page padding */
+.page-pad { padding: 0 18px; }
+
+/* small label */
+.label-tiny {
+  font-family: var(--font-mono);
+  font-size: 10px; letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}

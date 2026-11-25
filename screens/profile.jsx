@@ -166,7 +166,7 @@ function CSRDashboard({ onClose }) {
         </button>
         <div style={{ flex: 1, minWidth: 0 }}>
           <div className="mono" style={{ fontSize: 10, color: 'var(--ink-mute)', letterSpacing: '.1em' }}>CSR DASHBOARD · COMPANIES ACT 2013 ESR</div>
-          <div className="display" style={{ fontSize: 17, fontWeight: 600 }}>Tata Consultancy · CSR/2026/IND</div>
+          <div className="display" style={{ fontSize: 17, fontWeight: 600 }}>Northwind Tech · CSR/2026/IND</div>
         </div>
         <Pill tone="leaf">Verified</Pill>
       </div>

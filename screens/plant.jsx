@@ -339,7 +339,7 @@ function PlantMap({ onPick, onSeeTiers }) {
           boxShadow: 'var(--shadow-md)', border: '1px solid var(--line)',
         }}>
           <ICON.search size={16} stroke="var(--ink-mute)" strokeWidth={1.9}/>
-          <input placeholder={`Search ${activeRegion.label} place or MyTree ID`} style={{
+          <input placeholder={`Search ${activeRegion.label} place or Tree ID`} style={{
             flex: 1, border: 0, outline: 0, background: 'transparent',
             fontSize: 14,
           }}/>

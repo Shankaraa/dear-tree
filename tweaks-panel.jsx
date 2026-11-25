@@ -253,7 +253,19 @@ function TweaksPanel({ title = 'Tweaks', children }) {
     window.addEventListener('mouseup', up);
   };
 
-  if (!open) return null;
+  // Standalone (e.g. the public demo): show a small launcher so visitors can find the panel.
+  if (!open) {
+    if (window.parent !== window || new URLSearchParams(location.search).has('clean')) return null;
+    return (
+      <button onClick={() => setOpen(true)} aria-label="Open tweaks" style={{
+        position: 'fixed', right: 16, bottom: 16, zIndex: 2147483646,
+        padding: '9px 14px', borderRadius: 999, border: 0, cursor: 'pointer',
+        background: 'rgba(30,45,34,.88)', color: '#FFFBF1',
+        font: '600 12px "DM Sans", system-ui, sans-serif',
+        boxShadow: '0 6px 20px rgba(0,0,0,.18)',
+      }}>Tweaks · dark mode, tree age</button>
+    );
+  }
   return (
     <>
       <style>{__TWEAKS_STYLE}</style>

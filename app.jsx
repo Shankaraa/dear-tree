@@ -98,8 +98,18 @@ const overlayStyle = {
 // ─────────────────────────────────────────────────────────────
 // Root + Tweaks
 // ─────────────────────────────────────────────────────────────
+// Shareable demo states, e.g. ?dark=1&month=24&skip=1&persona=memorial
+function urlTweaks() {
+  const q = new URLSearchParams(location.search), t = {};
+  if (q.has('dark')) t.dark = q.get('dark') !== '0';
+  if (q.has('month')) t.treeMonth = Number(q.get('month')) || TWEAK_DEFAULTS.treeMonth;
+  if (q.has('skip')) t.skipOnboarding = q.get('skip') !== '0';
+  if (q.has('persona')) t.persona = q.get('persona');
+  return t;
+}
+
 function Root() {
-  const [tweaks, setTweak] = useTweaks(TWEAK_DEFAULTS);
+  const [tweaks, setTweak] = useTweaks({ ...TWEAK_DEFAULTS, ...urlTweaks() });
   const dark = !!tweaks.dark;
 
   // fit-to-viewport scale

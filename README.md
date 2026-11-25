@@ -1,20 +1,21 @@
 <div align="center">
 
-<img src="docs/hero.png" alt="Dear Tree onboarding screen" width="280"/>
-
 # Dear Tree
 
 **Plant a tree. Name it for someone you love.**
 
-[**Try the live demo →**](https://shankaraa.github.io/dear-tree/)
+<a href="https://shankaraa.github.io/dear-tree/"><img src="https://img.shields.io/badge/▶%20Try%20the%20live%20demo-2d6a3e?style=for-the-badge" alt="Try the live demo"/></a>
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-2d6a3e.svg)](LICENSE)
 ![Status](https://img.shields.io/badge/status-early%20prototype-e3a83f)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-2d6a3e.svg)](CONTRIBUTING.md)
+[![Good first issues](https://img.shields.io/github/issues/Shankaraa/dear-tree/good%20first%20issue?color=2d6a3e&label=good%20first%20issues)](https://github.com/Shankaraa/dear-tree/labels/good%20first%20issue)
+
+<br/>
+
+<img src="docs/hero.png" alt="Four Dear Tree screens: onboarding, your garden, a tree's page, and the naming ceremony" width="100%"/>
 
 </div>
-
----
 
 ## Why this exists
 
@@ -48,7 +49,25 @@ What you can click through today:
 | **Registry** | A public directory of every named tree |
 | **Groups and CSR** | Schools, classes and companies planting together |
 
-There is also a tweaks panel to switch light and dark mode and scrub a tree from month 1 to month 24.
+In the demo, tap **Tweaks** (bottom right) to switch to dark mode or scrub a tree from month 1 to month 24.
+
+<table>
+<tr>
+<td width="34%" valign="top" align="center">
+<img src="docs/demo.gif" alt="Walking through Dear Tree: from the garden to a tree's page to the naming ceremony" width="100%"/>
+<br/><sub>From planting to the day it gets its name</sub>
+</td>
+<td width="66%" valign="top" align="center">
+<img src="docs/screens-light.png" alt="Plant, Registry and Profile screens" width="100%"/>
+<br/><sub>Pick a spot · the public registry · your profile</sub>
+<br/><br/>
+<img src="docs/screens-dark.png" alt="Garden and tree page in dark mode" width="72%"/>
+<br/><sub>Dark mode</sub>
+</td>
+</tr>
+</table>
+
+**Shareable demo links:** add `?skip=1` to jump past onboarding, `&month=24` to see a tree on naming day, `&dark=1` for dark mode. For example: [naming day in dark mode](https://shankaraa.github.io/dear-tree/?skip=1&month=24&dark=1).
 
 ## Run it locally
 
@@ -109,6 +128,14 @@ tokens.css          colours, type, spacing, light/dark
 screens/            onboarding, garden, plant, ceremony, registry, tree-detail, profile
 vendor/             React, ReactDOM, Babel
 ```
+
+## The people growing this
+
+<a href="https://github.com/Shankaraa/dear-tree/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Shankaraa/dear-tree" alt="Contributors"/>
+</a>
+
+Your face goes here after your first merged PR. 🌱
 
 ## License
 

@@ -21,7 +21,8 @@ function TreeDetail({ month, setMonth, onBack, onClaimTag }) {
       paddingBottom: TAB_PAD + 80,
     }}>
       {/* Hero photo */}
-      <div style={{ position: 'relative', height: 380, overflow: 'hidden',
+      {/* clip top/sides only, so the info card can hang below the photo */}
+      <div style={{ position: 'relative', height: 380, clipPath: 'inset(0 0 -200px 0)', zIndex: 1,
         background: 'linear-gradient(180deg, #C9DEC6 0%, #DFCFA5 55%, #BFA77F 100%)' }}>
         {/* sun */}
         <div style={{
@@ -222,7 +223,7 @@ function TreeDetail({ month, setMonth, onBack, onClaimTag }) {
             ['Species', MAIN_TREE.species],
             ['Planted', MAIN_TREE.planted],
             ['Location', MAIN_TREE.location],
-            ['MyTree ID', MAIN_TREE.mytreeId],
+            ['Tree ID', MAIN_TREE.mytreeId],
             ['Geocode', geohash(MAIN_TREE.lat, MAIN_TREE.lng)],
             ['Guardian', MAIN_TREE.guardian],
             ['Steward', MAIN_TREE.steward],
@@ -513,7 +514,7 @@ function TagCeremony({ onClose }) {
             padding: 28, textAlign: 'center',
             display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
           }}>
-            <div className="mono" style={{ fontSize: 9, letterSpacing: '.2em', opacity: .8 }}>NAMED TREE · TAGGED</div>
+            <div className="mono" style={{ fontSize: 9, letterSpacing: '.2em', opacity: .8 }}>DEAR TREE · TAGGED</div>
             <div className="display" style={{ fontSize: 36, fontWeight: 700, lineHeight: 1, margin: '8px 0 4px' }}>ARKA</div>
             <div className="mono" style={{ fontSize: 8.5, opacity: .8 }}>{MAIN_TREE.mytreeId}</div>
             <div className="mono" style={{ fontSize: 9.5, opacity: .85 }}>21 · APR · 2024</div>

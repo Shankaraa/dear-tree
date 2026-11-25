@@ -122,7 +122,7 @@ function Profile({ persona, setPersona, onOpenCSR }) {
       </div>
 
       <div style={{ padding: '32px 22px 0', fontSize: 11, color: 'var(--ink-faint)', textAlign: 'center', fontFamily: 'var(--font-mono)' }}>
-        named trees · v0.1 · maintained by shadow
+        Dear Tree · v0.1 · open source
       </div>
     </div>
   );

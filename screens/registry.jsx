@@ -25,7 +25,7 @@ function Registry({ onOpenEntry, onOpenScan }) {
       <div style={{ padding: '6px 22px 16px' }}>
         <div className="label-tiny" style={{ marginBottom: 6 }}>open · public · audit-friendly</div>
         <div className="display" style={{ fontSize: 30, lineHeight: 1.1 }}>
-          The registry<br/>is the moat.
+          Every named tree,<br/>in the open.
         </div>
       </div>
 
@@ -63,7 +63,7 @@ function Registry({ onOpenEntry, onOpenScan }) {
           <input
             value={q}
             onChange={(e) => setQ(e.target.value)}
-            placeholder="Search name, @handle, or MyTree ID"
+            placeholder="Search name, @handle, or Tree ID"
             style={{ flex: 1, border: 0, outline: 0, background: 'transparent', fontSize: 14 }}
           />
           <button onClick={onOpenScan} style={{
@@ -364,7 +364,7 @@ function TagScanner({ onClose }) {
         </div>
 
         <div style={{ marginTop: 10, fontSize: 11, color: 'var(--ink-mute)', lineHeight: 1.4 }}>
-          Production flow: open camera, scan the physical tag, resolve the QR to a public MyTree profile, then connect through the supporter handle.
+          Production flow: open camera, scan the physical tag, resolve the QR to a public Dear Tree profile, then connect through the supporter handle.
         </div>
       </div>
     </div>

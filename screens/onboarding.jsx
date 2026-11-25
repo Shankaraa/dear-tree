@@ -205,7 +205,7 @@ function HeroArt({ variant }) {
           color: '#2A1F08',
           padding: 28, textAlign: 'center',
         }}>
-          <div className="mono" style={{ fontSize: 9, letterSpacing: '.18em', opacity: .8, marginBottom: 4 }}>NAMED TREE · TAGGED</div>
+          <div className="mono" style={{ fontSize: 9, letterSpacing: '.18em', opacity: .8, marginBottom: 4 }}>DEAR TREE · TAGGED</div>
           <div className="display" style={{ fontSize: 32, fontWeight: 700 }}>AARAV</div>
           <div className="mono" style={{ fontSize: 9.5, marginTop: 6, opacity: .85 }}>21 · APR · 2024</div>
           <div className="mono" style={{ fontSize: 9, opacity: .7, marginTop: 4 }}>12.976, 77.593 · #af3c9b</div>

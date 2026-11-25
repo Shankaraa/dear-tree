@@ -26,7 +26,8 @@ Comment on an issue to claim it, so two people don't build the same thing.
 1. Fork the repo and create a branch: `git checkout -b fix/garden-card-overlap`
 2. Keep the change focused. One fix or feature per PR.
 3. Check it in light **and** dark mode, using the tweaks panel.
-4. Open a pull request saying what you changed and why. A screenshot helps a lot for UI changes.
+4. Run the smoke test (needs `pip install playwright`): `python tests/smoke.py`. It also runs automatically on every pull request.
+5. Open a pull request saying what you changed and why. A screenshot helps a lot for UI changes.
 
 ## Style
 

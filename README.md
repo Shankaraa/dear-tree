@@ -95,6 +95,8 @@ Some ways in:
 
 Read [CONTRIBUTING.md](CONTRIBUTING.md) to get started. It's short.
 
+Curious how stewardship works on the ground? Read the draft [steward guide](docs/steward-guide.md), and help us improve it.
+
 ## Where AI can genuinely help
 
 We don't want "AI" as a sticker. These are problems where it can actually make trees survive:

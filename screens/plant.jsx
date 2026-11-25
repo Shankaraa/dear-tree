@@ -350,8 +350,8 @@ function PlantMap({ onPick, onSeeTiers }) {
       {/* tier filter chips */}
       <div style={{
         position: 'absolute', top: STATUS_PAD + 50, left: 0, right: 0,
-        padding: '0 12px', display: 'flex', gap: 6, overflowX: 'auto', zIndex: 10,
-      }} className="scroller">
+        padding: '0 36px 0 12px', display: 'flex', gap: 6, overflowX: 'auto', zIndex: 10,
+      }} className="scroller scroll-fade">
         {[
           { id: 'all', label: 'All' },
           { id: 'civic', label: 'Civic' },

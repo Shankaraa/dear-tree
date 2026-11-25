@@ -192,3 +192,9 @@ button:focus-visible, a:focus-visible, input:focus-visible, [tabindex]:focus-vis
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+/* horizontally scrolling chip rows: fade the right edge so it is clear there is more */
+.scroll-fade { -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 30px), transparent); mask-image: linear-gradient(to right, #000 calc(100% - 30px), transparent); }
+/* inputs set outline:0 inline; keep a visible focus indicator for keyboard users */
+input:focus-visible { outline: 2px solid var(--leaf) !important; outline-offset: 4px; border-radius: 6px; }
+.theme-dark input:focus-visible { outline-color: #8FD3A0 !important; }

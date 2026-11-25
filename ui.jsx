@@ -289,3 +289,34 @@ Object.assign(window, {
   SceneArt, PhotoSlot, LeafMark, TabBar, HeaderBar, SectionLabel, Pill,
   STATUS_PAD, TAB_PAD, tierMeta, formatINR, geohash,
 });
+
+// Accessible modal wrapper: role=dialog, labelled, focus moves in and returns, Escape closes.
+function Dialog({ label, onClose, children }) {
+  const ref = React.useRef(null);
+  useEffect(() => {
+    const prev = document.activeElement;
+    const el = ref.current;
+    if (el) el.focus({ preventScroll: true });
+    const onKey = (e) => {
+      if (e.key === 'Escape') { e.stopPropagation(); onClose && onClose(); return; }
+      if (e.key !== 'Tab' || !el) return;
+      const f = el.querySelectorAll('button:not([disabled]), input, [href], [tabindex]:not([tabindex="-1"])');
+      if (!f.length) { e.preventDefault(); return; }
+      const first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && (document.activeElement === first || document.activeElement === el)) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    };
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      if (prev && prev.focus && document.contains(prev)) prev.focus({ preventScroll: true });
+    };
+  }, []);
+  return (
+    <div ref={ref} role="dialog" aria-modal="true" aria-label={label} tabIndex={-1}
+      style={{ position: 'absolute', inset: 0, zIndex: 300, outline: 'none' }}>
+      {children}
+    </div>
+  );
+}
+window.Dialog = Dialog;

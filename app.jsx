@@ -77,15 +77,17 @@ function App({ tweaks, setTweak }) {
         </div>
       )}
 
-      {top === 'tagCeremony' && <TagCeremony onClose={pop}/>}
+      {top === 'tagCeremony' && <Dialog label="Tag ceremony" onClose={pop}><TagCeremony onClose={pop}/></Dialog>}
 
       {top === 'csr' && (
-        <div style={overlayStyle}>
-          <CSRDashboard onClose={pop}/>
-        </div>
+        <Dialog label="CSR dashboard" onClose={pop}>
+          <div style={overlayStyle}>
+            <CSRDashboard onClose={pop}/>
+          </div>
+        </Dialog>
       )}
 
-      {top === 'scanner' && <TagScanner onClose={pop}/>}
+      {top === 'scanner' && <Dialog label="Scan a tree tag" onClose={pop}><TagScanner onClose={pop}/></Dialog>}
     </div>
   );
 }

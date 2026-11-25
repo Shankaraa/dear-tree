@@ -78,7 +78,7 @@ function Registry({ onOpenEntry, onOpenScan }) {
       </div>
 
       {/* filter chips */}
-      <div style={{ padding: '10px 12px 0', display: 'flex', gap: 6, overflowX: 'auto' }} className="scroller">
+      <div style={{ padding: '10px 36px 0 12px', display: 'flex', gap: 6, overflowX: 'auto' }} className="scroller scroll-fade">
         {[
           { id: 'all',      label: 'All' },
           { id: 'kid',      label: '👶  Child' },

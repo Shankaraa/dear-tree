@@ -1,5 +1,5 @@
 // ─────────────────────────────────────────────────────────────
-// Named Trees — UI primitives + shared bits
+// Dear Tree — UI primitives + shared bits
 // ─────────────────────────────────────────────────────────────
 
 const { useState, useEffect, useRef, useMemo, useCallback } = React;

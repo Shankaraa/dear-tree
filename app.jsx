@@ -1,5 +1,5 @@
 // ─────────────────────────────────────────────────────────────
-// Named Trees — App shell, navigation, tweaks wiring
+// Dear Tree — App shell, navigation, tweaks wiring
 // ─────────────────────────────────────────────────────────────
 
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{

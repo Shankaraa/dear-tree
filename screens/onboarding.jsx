@@ -7,7 +7,7 @@ function Onboarding({ onDone }) {
 
   const panels = [
     {
-      eyebrow: 'Named Trees',
+      eyebrow: 'Dear Tree',
       title: <>Support a tree.<br/>Name it.</>,
       body: 'You don\'t own the land or the tree. You support a native Indian sapling and its care. If it survives two years, it gets named and tagged for your person.',
       art: <HeroArt variant="planting" />,

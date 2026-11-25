@@ -202,7 +202,7 @@ function TreeRow({ tree }) {
       />
       <div style={{ flex: 1, minWidth: 0 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-          <div className="display" style={{ fontSize: 17, fontWeight: 600, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+          <div className="display" style={{ fontSize: 17, fontWeight: 600, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',minWidth: 0, flex: 1 }}>
             {tree.monthProgress >= 24 ? `${tree.dedicatedTo}'s tree` : `For ${tree.dedicatedTo}`}
           </div>
           {isMemorial && <Pill tone="terra" style={{ padding: '2px 7px', fontSize: 10, flexShrink: 0 }}>Memorial</Pill>}

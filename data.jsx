@@ -1,5 +1,5 @@
 // ─────────────────────────────────────────────────────────────
-// Named Trees — sample data
+// Dear Tree — sample data
 // ─────────────────────────────────────────────────────────────
 
 // User's own trees (with month progress)

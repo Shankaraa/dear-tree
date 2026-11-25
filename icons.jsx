@@ -1,5 +1,5 @@
 // ─────────────────────────────────────────────────────────────
-// Named Trees — Icons (stroke style, 24x24 viewBox)
+// Dear Tree — Icons (stroke style, 24x24 viewBox)
 // ─────────────────────────────────────────────────────────────
 
 function Icon({ children, size = 24, stroke = 'currentColor', fill = 'none', strokeWidth = 1.7, style = {} }) {

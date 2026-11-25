@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="docs/hero.png" alt="Named Trees onboarding screen" width="300"/>
+<img src="docs/hero.png" alt="Dear Tree onboarding screen" width="300"/>
 
-# 🌳 Named Trees
+# 🌳 Dear Tree
 
 **Plant a tree. Name it for someone you love.**
 
@@ -18,7 +18,7 @@ You don't need to own land to own a tree. Fund one on public land, look after it
 
 ## What is it?
 
-Named Trees is a mobile app concept for dedicating real trees to real people: a newborn, a grandmother's memory, a friend's birthday. Each tree gets a public registry ID (for example `MYT-TN-CHN-ADY-0248`), a guardian, an on-the-ground steward, and a 24-month care journey.
+**Dear Tree** is a mobile app concept for dedicating real trees to real people: a newborn, a grandmother's memory, a friend's birthday. Each tree gets a public registry ID (for example `MYT-TN-CHN-ADY-0248`), a guardian, an on-the-ground steward, and a 24-month care journey.
 
 This repo is a **clickable, high-fidelity prototype** of the full experience, built in React and rendered inside an iOS frame.
 
@@ -38,19 +38,19 @@ This repo is a **clickable, high-fidelity prototype** of the full experience, bu
 No build step. Everything, including React and Babel, is vendored.
 
 ```bash
-git clone https://github.com/Shankaraa/named-trees.git
-cd named-trees
+git clone https://github.com/Shankaraa/dear-tree.git
+cd dear-tree
 python -m http.server 8000
 ```
 
-Then open <http://localhost:8000/Named%20Trees.html>.
+Then open <http://localhost:8000>.
 
 > A local server is required because the JSX files are loaded by Babel in the browser. Opening the file directly with `file://` will not work.
 
 ## Project structure
 
 ```
-Named Trees.html   entry point
+index.html         entry point
 app.jsx            app shell, navigation, tweaks wiring
 data.jsx           sample users, trees and species
 ui.jsx / icons.jsx shared components and icon set

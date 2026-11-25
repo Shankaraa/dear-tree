@@ -207,7 +207,7 @@ function TabBar({ tab, onTab, dark }) {
         {tabs.map(t => {
           const active = tab === t.id;
           return (
-            <button key={t.id} onClick={() => onTab(t.id)} style={{
+            <button key={t.id} onClick={() => onTab(t.id)} aria-current={active ? 'page' : undefined} style={{
               flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center',
               gap: 3, padding: '6px 4px',
               color: active ? 'var(--leaf)' : 'var(--ink-mute)',
@@ -234,7 +234,7 @@ function HeaderBar({ onBack, title, right, transparent }) {
                 : 'linear-gradient(to bottom, var(--bg) 70%, rgba(0,0,0,0))',
     }}>
       {onBack && (
-        <button onClick={onBack} style={{
+        <button onClick={onBack} aria-label="Go back" style={{
           width: 38, height: 38, borderRadius: 999,
           background: 'var(--surface)',
           border: '1px solid var(--line)',

@@ -37,8 +37,8 @@ function TreeDetail({ month, setMonth, onBack, onClaimTag }) {
         }}/>
         <HeaderBar onBack={onBack} transparent
           right={<div style={{ display: 'flex', gap: 8 }}>
-            <button style={iconBtnBlur}><ICON.share size={16}/></button>
-            <button style={iconBtnBlur}><ICON.more size={16}/></button>
+            <button aria-label="Share this tree" style={iconBtnBlur}><ICON.share size={16}/></button>
+            <button aria-label="More options" style={iconBtnBlur}><ICON.more size={16}/></button>
           </div>}/>
 
         {/* small caption */}
@@ -459,7 +459,7 @@ function TagCeremony({ onClose }) {
       overflow: 'hidden',
     }}>
       {/* close */}
-      <button onClick={onClose} style={{
+      <button onClick={onClose} aria-label="Close ceremony" style={{
         position: 'absolute', top: STATUS_PAD - 4, right: 14, zIndex: 5,
         width: 38, height: 38, borderRadius: 999,
         background: 'rgba(255,255,255,.08)',

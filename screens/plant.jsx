@@ -496,7 +496,7 @@ function SpotDetail({ spot, onBack, onPick, onSeeTiers }) {
       paddingBottom: TAB_PAD + 20,
     }}>
       <HeaderBar onBack={onBack} title="Spot detail"
-        right={<button style={{
+        right={<button aria-label="Share this spot" style={{
           width: 38, height: 38, borderRadius: 999,
           background: 'var(--surface)', border: '1px solid var(--line)',
           display: 'flex', alignItems: 'center', justifyContent: 'center',

@@ -4,7 +4,7 @@
 
 function Icon({ children, size = 24, stroke = 'currentColor', fill = 'none', strokeWidth = 1.7, style = {} }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24"
+    <svg aria-hidden="true" focusable="false" width={size} height={size} viewBox="0 0 24 24"
       fill={fill} stroke={stroke} strokeWidth={strokeWidth}
       strokeLinecap="round" strokeLinejoin="round" style={style}>
       {children}

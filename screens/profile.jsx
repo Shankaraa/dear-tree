@@ -157,7 +157,7 @@ function CSRDashboard({ onClose }) {
         borderBottom: '1px solid var(--line)',
         display: 'flex', alignItems: 'center', gap: 10,
       }}>
-        <button onClick={onClose} style={{
+        <button onClick={onClose} aria-label="Back to profile" style={{
           width: 36, height: 36, borderRadius: 10,
           background: 'var(--surface)', border: '1px solid var(--line)',
           display: 'flex', alignItems: 'center', justifyContent: 'center',

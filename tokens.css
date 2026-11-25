@@ -15,7 +15,7 @@
   /* ink */
   --ink:          #1F2A20;
   --ink-soft:     #3A4A3E;
-  --ink-mute:     #6E7B66;
+  --ink-mute:     #58654F;
   --ink-faint:    #A39C84;
 
   /* lines */
@@ -182,4 +182,13 @@ a { color: inherit; text-decoration: none; }
   font-size: 10px; letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--ink-mute);
+}
+
+/* accessibility: visible keyboard focus, respect reduced motion */
+button:focus-visible, a:focus-visible, input:focus-visible, [tabindex]:focus-visible {
+  outline: 2px solid var(--leaf); outline-offset: 2px;
+}
+.theme-dark button:focus-visible, .theme-dark input:focus-visible { outline-color: #8FD3A0; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }

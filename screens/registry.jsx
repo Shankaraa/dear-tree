@@ -66,7 +66,7 @@ function Registry({ onOpenEntry, onOpenScan }) {
             placeholder="Search name, @handle, or Tree ID"
             style={{ flex: 1, border: 0, outline: 0, background: 'transparent', fontSize: 14 }}
           />
-          <button onClick={onOpenScan} style={{
+          <button onClick={onOpenScan} aria-label="Scan a tree tag" style={{
             width: 34, height: 34, borderRadius: 999,
             background: 'var(--ink)', color: 'var(--bg)',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -248,7 +248,7 @@ function TagScanner({ onClose }) {
         onBack={onClose}
         title="Scan tag QR"
         transparent
-        right={<button onClick={onClose} style={{
+        right={<button onClick={onClose} aria-label="Close" style={{
           width: 38, height: 38, borderRadius: 999,
           background: 'rgba(255,251,241,0.85)',
           backdropFilter: 'blur(8px)',

@@ -262,7 +262,7 @@ function TagScanner({ onClose }) {
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
         fontSize: 11, color: 'rgba(255,251,241,.7)',
       }}>
-        <span className="mono">MYTREE CAMERA</span>
+        <span className="mono">DEAR TREE CAMERA</span>
         <span className="mono">ID LOOKUP READY</span>
       </div>
 

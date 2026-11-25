@@ -616,7 +616,7 @@ function SpotDetail({ spot, onBack, onPick, onSeeTiers }) {
             <ICON.user size={22} stroke="var(--marigold)" strokeWidth={1.7}/>
           </div>
           <div style={{ flex: 1 }}>
-            <div style={{ fontSize: 14, fontWeight: 600 }}>Karthik · SayTrees steward</div>
+            <div style={{ fontSize: 14, fontWeight: 600 }}>Karthik · Steward Collective</div>
             <div style={{ fontSize: 11.5, color: 'var(--ink-mute)' }}>187 trees · 84% survival · 5 yrs</div>
           </div>
           <Pill tone="leaf">Verified</Pill>

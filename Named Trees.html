@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Named Trees · prototype</title>
+
+  <!-- Type -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="tokens.css"/>
+
+  <style>
+    html, body, #root { height: 100%; margin: 0; }
+    body { background: #0A100C; font-family: "DM Sans", system-ui, sans-serif; overflow: hidden; }
+    @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    /* prevent ios long-press */
+    * { -webkit-tap-highlight-color: transparent; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- React -->
+  <script src="vendor/react.development.js"></script>
+  <script src="vendor/react-dom.development.js"></script>
+  <script src="vendor/babel.min.js"></script>
+
+  <!-- iOS frame + tweaks scaffold (starters) -->
+  <script type="text/babel" src="ios-frame.jsx"></script>
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+
+  <!-- App pieces -->
+  <script type="text/babel" src="icons.jsx"></script>
+  <script type="text/babel" src="ui.jsx"></script>
+  <script type="text/babel" src="data.jsx"></script>
+  <script type="text/babel" src="screens/onboarding.jsx"></script>
+  <script type="text/babel" src="screens/garden.jsx"></script>
+  <script type="text/babel" src="screens/plant.jsx"></script>
+  <script type="text/babel" src="screens/ceremony.jsx"></script>
+  <script type="text/babel" src="screens/registry.jsx"></script>
+  <script type="text/babel" src="screens/tree-detail.jsx"></script>
+  <script type="text/babel" src="screens/profile.jsx"></script>
+  <script type="text/babel" src="app.jsx"></script>
+</body>
+</html>

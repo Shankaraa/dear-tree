@@ -100,7 +100,7 @@ function Garden({ onOpenTree, onOpenPlant, onOpenScan, mainTreeMonth, persona })
               <span style={{ fontSize: 12.5, color: 'var(--ink-soft)' }}>
                 {tagged ? 'Your tree name is ready · open to claim the tag' :
                   mainTreeMonth >= 22 ? `${24-mainTreeMonth} months to tag day` :
-                  mainTreeMonth >= 12 ? 'First birthday cleared · 84% of cohort still standing' :
+                  mainTreeMonth >= 12 ? 'First birthday cleared' :
                   `Surviving · ${24-mainTreeMonth} months to go`}
               </span>
             </div>

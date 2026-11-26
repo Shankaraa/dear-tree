@@ -3,7 +3,7 @@
 // ─────────────────────────────────────────────────────────────
 
 function Plant({ onPlanted, persona, setPersona }) {
-  const [stage, setStage] = useState('map'); // map | spot | tiers | ceremony | confirm
+  const [stage, setStage] = useState('map'); // map | spot | tiers | ceremony | pay | confirm
   const [selectedSpot, setSelectedSpot] = useState(null);
   const [dedication, setDedication] = useState({
     name: '',
@@ -16,7 +16,8 @@ function Plant({ onPlanted, persona, setPersona }) {
 
   if (stage === 'tiers')    return <Tiers onBack={() => goTo('map')} />;
   if (stage === 'spot')     return <SpotDetail spot={selectedSpot} onBack={() => goTo('map')} onPick={() => goTo('ceremony')} onSeeTiers={() => goTo('tiers')} />;
-  if (stage === 'ceremony') return <Ceremony spot={selectedSpot} value={dedication} onChange={setDedication} onBack={() => goTo('spot')} onPlanted={() => goTo('confirm')} persona={persona} setPersona={setPersona} />;
+  if (stage === 'ceremony') return <Ceremony spot={selectedSpot} value={dedication} onChange={setDedication} onBack={() => goTo('spot')} onPlanted={() => goTo('pay')} persona={persona} setPersona={setPersona} />;
+  if (stage === 'pay')      return <UpiConcept spot={selectedSpot} onBack={() => goTo('ceremony')} onPaid={() => goTo('confirm')} />;
   if (stage === 'confirm')  return <ConfirmPlanted spot={selectedSpot} dedication={dedication} onDone={onPlanted} />;
 
   return <PlantMap onPick={(s) => { setSelectedSpot(s); goTo('spot'); }} onSeeTiers={() => goTo('tiers')} />;
@@ -307,7 +308,7 @@ function PlantMap({ onPick, onSeeTiers }) {
           fontSize: 9.5, color: 'var(--ink-mute)', zIndex: 8,
           display: 'flex', alignItems: 'center', justifyContent: 'space-between',
         }}>
-          <span>© OpenStreetMap tiles</span>
+          <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>© OpenStreetMap contributors</a>
           <span>prod: Mappls/MapmyIndia</span>
         </div>
 
@@ -581,11 +582,11 @@ function SpotDetail({ spot, onBack, onPick, onSeeTiers }) {
           background: 'var(--surface)', borderRadius: 18,
           border: '1px solid var(--line)',
         }}>
-          <div className="label-tiny" style={{ marginBottom: 12 }}>survival math · honest</div>
+          <div className="label-tiny" style={{ marginBottom: 12 }}>what to expect</div>
           <div style={{ display: 'flex', justifyContent: 'space-between', gap: 10 }}>
             {[ 
-              { v: '78%', l: 'survive 2 yrs' },
-              { v: '14d', l: 'replant SLA' },
+              { v: '24 mo', l: 'to earn the name' },
+              { v: 'Replant', l: 'if it does not make it' },
               { v: '+1yr', l: 'post-tag care' },
             ].map((s, i) => (
               <div key={i} style={{ flex: 1 }}>
@@ -617,9 +618,9 @@ function SpotDetail({ spot, onBack, onPick, onSeeTiers }) {
           </div>
           <div style={{ flex: 1 }}>
             <div style={{ fontSize: 14, fontWeight: 600 }}>Karthik · Steward Collective</div>
-            <div style={{ fontSize: 11.5, color: 'var(--ink-mute)' }}>187 trees · 84% survival · 5 yrs</div>
+            <div style={{ fontSize: 11.5, color: 'var(--ink-mute)' }}>Sample steward · illustrative</div>
           </div>
-          <Pill tone="leaf">Verified</Pill>
+          <Pill tone="leaf">Sample</Pill>
         </div>
 
       </div>
@@ -644,6 +645,55 @@ function SpotDetail({ spot, onBack, onPick, onSeeTiers }) {
 }
 
 // ─────────────────────────────────────────────────────────────
+// UPI — concept screen. Nothing is charged; no payment code exists.
+// ─────────────────────────────────────────────────────────────
+function UpiConcept({ spot, onBack, onPaid }) {
+  const meta = window.tierMeta[spot.tier];
+  const [mode, setMode] = useState('once'); // once | autopay
+  const monthly = Math.round(meta.priceLo / 24);
+  const opts = [
+    { id: 'once',    t: 'Pay once by UPI',        d: formatINR(meta.priceLo) + ' via any UPI app' },
+    { id: 'autopay', t: 'Monthly care by UPI AutoPay', d: '~' + formatINR(monthly) + ' a month for 24 months, only while the tree is alive' },
+  ];
+  return (
+    <div className="scroller" style={{ height: '100%', overflowY: 'auto', background: 'var(--bg)', paddingTop: STATUS_PAD + 50, paddingBottom: 40 }}>
+      <HeaderBar onBack={onBack} title="Support by UPI"/>
+      <div style={{ padding: '0 22px' }}>
+        <div style={{ padding: '10px 12px', borderRadius: 12, background: 'var(--marigold-pale)', color: 'var(--ink)', fontSize: 12.5, lineHeight: 1.45 }}>
+          <strong>Concept screen.</strong> No payment is taken and nothing is sent to any bank or UPI app.
+        </div>
+        <div className="label-tiny" style={{ margin: '20px 0 8px' }}>how would you like to support</div>
+        <div role="radiogroup" aria-label="Payment style" style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+          {opts.map(o => (
+            <button key={o.id} role="radio" aria-checked={mode === o.id} onClick={() => setMode(o.id)} style={{
+              textAlign: 'left', padding: 14, borderRadius: 16, background: 'var(--surface)',
+              border: `2px solid ${mode === o.id ? 'var(--leaf)' : 'var(--line)'}`,
+            }}>
+              <div style={{ fontSize: 14, fontWeight: 600 }}>{o.t}</div>
+              <div style={{ fontSize: 12, color: 'var(--ink-mute)', marginTop: 2 }}>{o.d}</div>
+            </button>
+          ))}
+        </div>
+        <div style={{ marginTop: 16, padding: 14, borderRadius: 16, background: 'var(--surface)', border: '1px solid var(--line)', display: 'flex', gap: 14, alignItems: 'center' }}>
+          <div aria-hidden="true" style={{ width: 84, height: 84, borderRadius: 10, border: '2px dashed var(--line-strong)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <ICON.qr size={34} stroke="var(--ink-faint)"/>
+          </div>
+          <div style={{ fontSize: 12, color: 'var(--ink-soft)', lineHeight: 1.45 }}>
+            A UPI QR would appear here. Later, the same idea could sit on the tree's tag so visitors can chip in for its care.
+          </div>
+        </div>
+        <div style={{ fontSize: 12, color: 'var(--ink-mute)', marginTop: 14, lineHeight: 1.5 }}>
+          Open questions: who holds the money, how a monthly mandate is released after a survival check, and which rules apply. Want to help? See <em>docs/upi-concept.md</em> in the repo.
+        </div>
+        <button onClick={onPaid} className="btn-leaf" style={{ marginTop: 20, width: '100%', justifyContent: 'center', padding: '18px 22px', fontSize: 16 }}>
+          Continue (demo)
+        </button>
+      </div>
+    </div>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────
 // TIERS — pricing overview
 // ─────────────────────────────────────────────────────────────
 function Tiers({ onBack }) {
@@ -657,11 +707,11 @@ function Tiers({ onBack }) {
       <div style={{ padding: '0 22px' }}>
         <div className="label-tiny" style={{ marginBottom: 8 }}>pricing structure</div>
         <div className="display" style={{ fontSize: 28, lineHeight: 1.1 }}>
-          Visibility sets the price.<br/>
-          <span style={{ color: 'var(--leaf)' }}>Premium funds reforestation.</span>
+          Busy spots cost more.<br/>
+          <span style={{ color: 'var(--leaf)' }}>Premium helps fund restoration.</span>
         </div>
         <div style={{ fontSize: 13.5, color: 'var(--ink-soft)', marginTop: 12, lineHeight: 1.5 }}>
-          Like billboard ads or domain names — foot-traffic and frontage set the rate. 60% of every premium tag funds a stack of rural restoration trees, traceable in the open registry.
+          In this concept, prime locations cost more to host, and part of each premium tag would help fund native restoration elsewhere, traceable in the open registry. Prices and the split are placeholders for discussion, not final.
         </div>
       </div>
 
@@ -686,14 +736,14 @@ function Tiers({ onBack }) {
                 </div>
               </div>
               <div style={{ fontSize: 12.5, color: 'var(--ink-soft)', lineHeight: 1.5 }}>
-                {id === 'civic' && 'Bus stations, major intersections, civic frontage. Bought by politicians, celebrities, large corporates as visible legacy.'}
-                {id === 'hivis' && 'Main parks, school gates, market frontage. Mid-corporates, well-off families, memorials.'}
-                {id === 'standard' && 'Colony parks, residential streets. The kid-tree core market.'}
-                {id === 'rural' && 'Native restoration zones. Subsidised by tiers above. Where the mass scale lives.'}
+                {id === 'civic' && 'Bus stations, major intersections, civic frontage. Visible spots for institutions, businesses and families.'}
+                {id === 'hivis' && 'Main parks, school gates, market frontage. Families, schools, businesses and memorials.'}
+                {id === 'standard' && 'Colony parks and residential streets. Trees for children, gifts and memorials.'}
+                {id === 'rural' && 'Native restoration zones, supported by the tiers above. Where most saplings would go.'}
               </div>
               {id === 'civic' && (
                 <div style={{ marginTop: 12, padding: '10px 12px', background: 'var(--leaf-pale)', borderRadius: 12, fontSize: 12, color: 'var(--leaf-deep)' }}>
-                  <strong>1 civic tag</strong> = <strong>~200 rural restoration trees</strong> in cross-subsidy
+                  Illustrative: one premium tag could help fund <strong>many</strong> restoration saplings
                 </div>
               )}
             </div>
@@ -701,7 +751,7 @@ function Tiers({ onBack }) {
         })}
       </div>
       <div style={{ padding: '24px 22px 0', fontSize: 12, color: 'var(--ink-mute)', fontStyle: 'italic', lineHeight: 1.5 }}>
-        "One politician's vanity tag = 200 actual reforestation trees + the platform's bills paid. Cynical, elegant, works."
+        Pricing and the funding split are open questions. Have a view? Open an issue on GitHub.
       </div>
     </div>
   );

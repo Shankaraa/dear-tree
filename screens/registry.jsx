@@ -13,9 +13,6 @@ function Registry({ onOpenEntry, onOpenScan }) {
     return true;
   });
 
-  const total = 47218;
-  const tagged = 8124;
-
   return (
     <div className="scroller" style={{
       height: '100%', overflowY: 'auto', background: 'var(--bg)',
@@ -23,7 +20,7 @@ function Registry({ onOpenEntry, onOpenScan }) {
       paddingBottom: TAB_PAD + 20,
     }}>
       <div style={{ padding: '6px 22px 16px' }}>
-        <div className="label-tiny" style={{ marginBottom: 6 }}>open · public · audit-friendly</div>
+        <div className="label-tiny" style={{ marginBottom: 6 }}>open · public · sample data</div>
         <div className="display" style={{ fontSize: 30, lineHeight: 1.1 }}>
           Every named tree,<br/>in the open.
         </div>
@@ -36,9 +33,9 @@ function Registry({ onOpenEntry, onOpenScan }) {
           border: '1px solid var(--line)', padding: 18,
         }}>
           <div style={{ display: 'flex', gap: 14 }}>
-            <BigStat n={total} l="trees planted" tone="leaf"/>
-            <BigStat n={tagged} l="trees tagged" tone="mari"/>
-            <BigStat n="78%" l="survival" tone="default" isText/>
+            <BigStat n={REGISTRY.length} l="sample entries" tone="leaf"/>
+            <BigStat n="24 mo" l="to earn a name" tone="mari" isText/>
+            <BigStat n="Public" l="by default" tone="default" isText/>
           </div>
           <div style={{
             display: 'flex', alignItems: 'center', gap: 10,
@@ -46,8 +43,7 @@ function Registry({ onOpenEntry, onOpenScan }) {
             fontSize: 12, color: 'var(--ink-mute)',
           }}>
             <ICON.ledger size={14} stroke="var(--ink-mute)" strokeWidth={1.7}/>
-            <span style={{ flex: 1 }}>Audit · partner field checks · Q1 2026 published</span>
-            <button style={{ fontSize: 11.5, color: 'var(--leaf)', fontWeight: 600 }}>view CSV ↗</button>
+            <span style={{ flex: 1 }}>Sample data. A real registry would publish its method and data.</span>
           </div>
         </div>
       </div>
@@ -99,7 +95,7 @@ function Registry({ onOpenEntry, onOpenScan }) {
         })}
       </div>
 
-      {/* trace card — politician's tag */}
+      {/* trace card — sample civic tag */}
       <SectionLabel>trace · transparency in action</SectionLabel>
       <div style={{ padding: '0 18px' }}>
         <div style={{
@@ -111,8 +107,8 @@ function Registry({ onOpenEntry, onOpenScan }) {
             <PhotoSlot ratio={null} height={60} style={{ width: 60, flexShrink: 0 }} round={12} tone="dawn" scene="civic"/>
             <div style={{ flex: 1 }}>
               <Pill tone="terra">Civic landmark · ₹2L</Pill>
-              <div className="display" style={{ fontSize: 18, fontWeight: 600, marginTop: 6 }}>MLA Vinod Kumar's tag</div>
-              <div style={{ fontSize: 12, color: 'var(--ink-mute)' }}>Banashankari Bus Stand · Banyan</div>
+              <div className="display" style={{ fontSize: 18, fontWeight: 600, marginTop: 6 }}>Greenfield Residents' tag</div>
+              <div style={{ fontSize: 12, color: 'var(--ink-mute)' }}>Sample bus stand · Banyan</div>
             </div>
           </div>
           <div style={{
@@ -124,7 +120,7 @@ function Registry({ onOpenEntry, onOpenScan }) {
               <ICON.tree size={14} stroke="var(--leaf-deep)" strokeWidth={2}/>
             </div>
             <div style={{ flex: 1, fontSize: 12.5 }}>
-              Funded <strong>197</strong> rural saplings in Hosakote &amp; Kanakapura
+              Would fund <strong>197</strong> rural saplings (illustrative)
             </div>
             <ICON.chev size={12} stroke="var(--ink-faint)"/>
           </div>

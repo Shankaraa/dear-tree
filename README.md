@@ -13,6 +13,8 @@
 
 <br/>
 
+> **A concept, not a service yet.** Dear Tree is an open-source prototype. No real trees are being planted, no payments are taken, and the data in the demo is made up. We're building toward a first real pilot, and you're invited.
+
 <img src="docs/hero.png" alt="Four Dear Tree screens: onboarding, your garden, a tree's page, and the naming ceremony" width="100%"/>
 
 </div>
@@ -23,13 +25,13 @@ Most of us want to leave something good behind for the people we love. We usuall
 
 A tree doesn't. If it survives the first two years, it will probably outlive everyone who planted it.
 
-Dear Tree is a simple idea: **you don't need to own land to own a tree.** You fund a sapling on public land, a local steward looks after it, and you follow it month by month. If it is still standing after 24 months, it gets a permanent tag with a name on it.
+Dear Tree is a simple idea: **you don't need to own land to dedicate a tree.** The idea: you support a sapling on public land, a local steward looks after it, and you follow it month by month. If it is still standing after 24 months, it gets a permanent tag with a name on it. (You support the tree and its care. You don't get legal ownership of the tree or the land.)
 
 *For Arka, born 14 March 2024.*
 *In memory of Lakshmi, 1948–2022.*
 *For the 4B teachers.*
 
-Each tree gets a public registry ID, so anyone walking past can scan it and read who it is for.
+In the finished service, each tree would get a public registry ID, so anyone walking past could scan its tag and read who it is for.
 
 The point isn't the number of trees planted. It's the number that **survive**. That's why the whole app is built around the two-year journey instead of the moment you pay.
 
@@ -49,7 +51,7 @@ What you can click through today:
 | **Registry** | A public directory of every named tree |
 | **Groups and CSR** | Schools, classes and companies planting together |
 
-In the demo, tap **Tweaks** (bottom right) to switch to dark mode or scrub a tree from month 1 to month 24.
+On a desktop, tap **Tweaks** (bottom right) to switch to dark mode or scrub a tree from month 1 to month 24.
 
 <table>
 <tr>
@@ -66,6 +68,8 @@ In the demo, tap **Tweaks** (bottom right) to switch to dark mode or scrub a tre
 </td>
 </tr>
 </table>
+
+Place names in the sample data (parks, bus stands) are real locations used for illustration only. There are no partnerships with any of them.
 
 **Shareable demo links:** add `?skip=1` to jump past onboarding, `&month=24` to see a tree on naming day, `&dark=1` for dark mode. For example: [naming day in dark mode](https://shankaraa.github.io/dear-tree/?skip=1&month=24&dark=1).
 
@@ -103,7 +107,7 @@ We don't want "AI" as a sticker. These are problems where it can actually make t
 
 - **Survival check from a photo.** A steward uploads a monthly photo, and a model flags stress, disease or a dead sapling early enough to replant.
 - **Right tree, right place.** Recommend native species for a site using soil, rainfall and nearby survival data, rather than whatever is cheapest in the nursery.
-- **Satellite canopy tracking.** Use open imagery (Sentinel-2) to verify that a planted site is actually getting greener over time.
+- **Satellite canopy tracking (open question).** Can free imagery like Sentinel-2 (10 m pixels) show whether a *site* is greening over time? Single saplings are far too small to see, so this is about sites and cohorts, and we expect real limits. Scoping help welcome.
 - **Honest reporting.** Turn raw survival data into plain-language updates for families, and into audit-ready reports for CSR funders, without inflating anything.
 - **Languages.** Dedications and steward updates in Tamil, Hindi, Kannada and beyond.
 
@@ -114,6 +118,8 @@ If you work on climate ML, remote sensing or computer vision, we would love your
 - [x] Clickable prototype of the full journey
 - [ ] Contributor-friendly build setup (Vite) instead of in-browser Babel
 - [ ] Backend and public registry API
+- [ ] Tamper-evident registry log (hash-chained entries and published exports; a public chain only if it earns its place)
+- [ ] UPI payments, including monthly care by UPI AutoPay released only while a tree is alive (see [the concept note](docs/upi-concept.md))
 - [ ] Steward app: monthly photo check-ins
 - [ ] QR / NFC tag scanning
 - [ ] First pilot with a real plantation partner
@@ -144,3 +150,5 @@ Your face goes here after your first merged PR. 🌱
 [MIT](LICENSE). Use it, fork it, plant something.
 
 All people, organisations and trees in the sample data are made up.
+
+This is a personal open-source project. It is not affiliated with or endorsed by any employer or organisation.

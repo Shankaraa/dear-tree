@@ -110,6 +110,27 @@ function urlTweaks() {
   return t;
 }
 
+// Always-visible reminder that this is a concept, shown beside the phone on wide screens.
+function DemoNote() {
+  const [wide, setWide] = useState(window.innerWidth >= 700);
+  useEffect(() => {
+    const f = () => setWide(window.innerWidth >= 700);
+    window.addEventListener('resize', f);
+    return () => window.removeEventListener('resize', f);
+  }, []);
+  if (!wide || new URLSearchParams(location.search).has('clean')) return null;
+  return (
+    <div style={{
+      position: 'fixed', left: 16, bottom: 16, zIndex: 2147483645, maxWidth: 260,
+      padding: '9px 14px', borderRadius: 14,
+      background: 'rgba(30,45,34,.88)', color: '#FFFBF1',
+      font: '500 12px/1.4 "DM Sans", system-ui, sans-serif',
+    }}>
+      <strong>Concept prototype.</strong> Sample data. No real trees are planted and no payments are taken.
+    </div>
+  );
+}
+
 function Root() {
   const [tweaks, setTweak] = useTweaks({ ...TWEAK_DEFAULTS, ...urlTweaks() });
   const dark = !!tweaks.dark;
@@ -136,6 +157,7 @@ function Root() {
       overflow: 'hidden',
       transition: 'background .4s ease',
     }}>
+      <DemoNote/>
       <div style={{ transform: `scale(${scale})`, transformOrigin: 'center' }}>
         <IOSDevice width={402} height={874} dark={dark}>
           <App tweaks={tweaks} setTweak={setTweak}/>

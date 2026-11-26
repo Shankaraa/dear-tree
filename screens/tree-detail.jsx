@@ -207,7 +207,7 @@ function TreeDetail({ month, setMonth, onBack, onClaimTag }) {
               <div>
                 <div style={{ fontSize: 14, fontWeight: 600 }}>{24 - month} months to tag day</div>
                 <div style={{ fontSize: 11.5, color: 'var(--ink-mute)' }}>
-                  Your tree has survived the filter. Cohort: 84% still standing.
+                  Your tree has made it this far.
                 </div>
               </div>
             </div>

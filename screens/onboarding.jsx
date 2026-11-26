@@ -21,22 +21,23 @@ function Onboarding({ onDone }) {
       cta: 'Next',
     },
     {
-      eyebrow: 'The dopamine layer',
+      eyebrow: 'Follow along',
       title: <>Slow tree.<br/>Fast updates.</>,
       body: 'Growth photos, steward notes, height milestones, and field sightings from volunteers. The tree is slow; the care record keeps the supporter connected.',
       art: <HeroArt variant="feed" />,
       cta: 'Next',
     },
     {
-      eyebrow: 'A status game worth playing',
-      title: <>Quiet wealth.<br/>Local respect.</>,
-      body: 'Visible urban support can help fund lower-cost native restoration work. The registry stays public, simple, and audit-friendly.',
+      eyebrow: 'Open by design',
+      title: <>Every named tree,<br/>in the open.</>,
+      body: 'Each named tree gets a public registry entry, so anyone can see who it is for and how it did. Support for trees in busy places could also help fund native restoration elsewhere.',
       art: <HeroArt variant="tag" />,
       cta: 'Plant my first tree',
     },
   ];
 
   const p = panels[step];
+  const DEMO_LINE = 'Concept prototype · sample data · no real trees or payments yet';
 
   return (
     <div style={{
@@ -90,6 +91,7 @@ function Onboarding({ onDone }) {
           <ICON.chev size={16} stroke="currentColor" strokeWidth={2.4} />
         </button>
       </div>
+      <div style={{ padding: '14px 22px 0', textAlign: 'center', fontSize: 11, color: 'var(--ink-mute)' }}>{DEMO_LINE}</div>
     </div>
   );
 }

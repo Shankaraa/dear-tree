@@ -83,7 +83,7 @@ const MILESTONES = [
   { month: 4,  kind: 'water',   label: 'Monsoon caught', detail: 'No watering needed for 18 days' },
   { month: 6,  kind: 'animal',  label: 'First visitor', detail: 'Purple sunbird · 06:42 IST' },
   { month: 9,  kind: 'height',  label: '1 metre tall', detail: 'Measured 04 Jan 2025' },
-  { month: 12, kind: 'cake',    label: 'First birthday', detail: '1 year alive · 84% of cohort still standing' },
+  { month: 12, kind: 'cake',    label: 'First birthday', detail: '1 year alive' },
   { month: 14, kind: 'animal',  label: 'Squirrel sighted', detail: 'Indian palm squirrel · 11:08 IST' },
   { month: 18, kind: 'height',  label: '2.1 metres', detail: 'Canopy 0.9 m wide' },
   { month: 22, kind: 'animal',  label: 'Bird nest', detail: 'Common myna · 2 eggs' },

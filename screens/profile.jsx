@@ -165,10 +165,10 @@ function CSRDashboard({ onClose }) {
           <ICON.back size={16}/>
         </button>
         <div style={{ flex: 1, minWidth: 0 }}>
-          <div className="mono" style={{ fontSize: 10, color: 'var(--ink-mute)', letterSpacing: '.1em' }}>CSR DASHBOARD · COMPANIES ACT 2013 ESR</div>
+          <div className="mono" style={{ fontSize: 10, color: 'var(--ink-mute)', letterSpacing: '.1em' }}>CSR DASHBOARD · SAMPLE DATA</div>
           <div className="display" style={{ fontSize: 17, fontWeight: 600 }}>Northwind Tech · CSR/2026/IND</div>
         </div>
-        <Pill tone="leaf">Verified</Pill>
+        <Pill tone="leaf">Sample</Pill>
       </div>
 
       {/* compliance hero */}
@@ -201,7 +201,7 @@ function CSRDashboard({ onClose }) {
       <div style={{ padding: '12px 16px 0', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
         <KpiTile n="1,247" l="trees committed" delta="+182 this Q" tone="leaf"/>
         <KpiTile n="843"   l="planted & live"  delta="68% planted" tone="default"/>
-        <KpiTile n="82%"   l="survival rate"   delta="+4% vs Q4"   tone="leaf"/>
+        <KpiTile n="—"     l="survival rate"   delta="measured, not assumed" tone="leaf"/>
         <KpiTile n="218"   l="animal sightings" delta="22 species"  tone="mari"/>
       </div>
 
@@ -311,15 +311,15 @@ function CSRDashboard({ onClose }) {
               <div style={{ fontSize: 11, color: 'var(--ink-mute)' }}>{p.loc} · {p.trees} trees</div>
             </div>
             <div style={{ textAlign: 'right' }}>
-              <div className="mono" style={{ fontSize: 13, fontWeight: 700, color: 'var(--leaf)' }}>{p.survival}%</div>
-              <div style={{ fontSize: 9.5, color: 'var(--ink-mute)', textTransform: 'uppercase', letterSpacing: '.1em' }}>{p.status}</div>
+              <div className="mono" style={{ fontSize: 13, fontWeight: 700, color: 'var(--leaf)' }}>{p.status === 'tagged' ? 'tagged' : 'in care'}</div>
+              <div style={{ fontSize: 9.5, color: 'var(--ink-mute)', textTransform: 'uppercase', letterSpacing: '.1em' }}>sample</div>
             </div>
           </div>
         ))}
       </div>
 
       {/* Receipts */}
-      <SectionLabel>auditor-ready receipts</SectionLabel>
+      <SectionLabel>reports · concept</SectionLabel>
       <div style={{ padding: '0 16px 6px' }}>
         <div style={{
           background: 'var(--surface)', borderRadius: 18,
@@ -348,7 +348,7 @@ function CSRDashboard({ onClose }) {
       </div>
 
       <div style={{ padding: '24px 18px 0', fontSize: 11, color: 'var(--ink-mute)', fontFamily: 'var(--font-mono)', textAlign: 'center' }}>
-        compliant · companies act 2013 · sec 135 · schedule vii
+        sample data · not a compliance tool
       </div>
     </div>
   );

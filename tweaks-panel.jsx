@@ -255,7 +255,7 @@ function TweaksPanel({ title = 'Tweaks', children }) {
 
   // Standalone (e.g. the public demo): show a small launcher so visitors can find the panel.
   if (!open) {
-    if (window.parent !== window || new URLSearchParams(location.search).has('clean')) return null;
+    if (window.parent !== window || window.innerWidth < 700 || new URLSearchParams(location.search).has('clean')) return null;
     return (
       <button onClick={() => setOpen(true)} aria-label="Open tweaks" style={{
         position: 'fixed', right: 16, bottom: 16, zIndex: 2147483646,

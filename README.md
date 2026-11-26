@@ -75,15 +75,16 @@ Place names in the sample data (parks, bus stands) are real locations used for i
 
 ## Run it locally
 
-No install and no build. React and Babel are bundled in `vendor/`.
+You need [Node.js](https://nodejs.org) 20 or newer.
 
 ```bash
 git clone https://github.com/Shankaraa/dear-tree.git
 cd dear-tree
-python -m http.server 8000
+npm install
+npm run dev
 ```
 
-Open <http://localhost:8000>. You need the small server because the browser can't load the JSX files over `file://`.
+Open the address Vite prints (usually <http://localhost:5173>). Edits show up instantly.
 
 ## Come build it with us
 
@@ -116,7 +117,7 @@ If you work on climate ML, remote sensing or computer vision, we would love your
 ## Roadmap
 
 - [x] Clickable prototype of the full journey
-- [ ] Contributor-friendly build setup (Vite) instead of in-browser Babel
+- [x] Vite build instead of in-browser Babel (fast first load)
 - [ ] Backend and public registry API
 - [ ] Tamper-evident registry log (hash-chained entries and published exports; a public chain only if it earns its place)
 - [ ] UPI payments, including monthly care by UPI AutoPay released only while a tree is alive (see [the concept note](docs/upi-concept.md))
@@ -134,7 +135,8 @@ data.jsx            sample people, trees and planting sites (all fictional)
 ui.jsx, icons.jsx   shared components
 tokens.css          colours, type, spacing, light/dark
 screens/            onboarding, garden, plant, ceremony, registry, tree-detail, profile
-vendor/             React, ReactDOM, Babel
+main.jsx, globals.js  Vite entry and the React globals the screens share
+vite.config.js      build config (output goes to dist/)
 ```
 
 ## The people growing this

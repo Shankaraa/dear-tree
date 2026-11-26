@@ -5,3 +5,5 @@ Thumbs.db
 # internal working files, not for the public repo
 uploads/
 checks/
+dist/
+__pycache__/

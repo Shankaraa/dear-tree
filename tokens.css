@@ -1,6 +1,6 @@
 /* ─────────────────────────────────────────────────────────────
    Dear Tree — design tokens
-   Night garden · emerald + lime glow · rose and sky accents
+   Night garden · emerald + lime glow · rose and sky accents · Outfit headings
    ───────────────────────────────────────────────────────────── */
 
 :root,
@@ -108,7 +108,7 @@
 
 /* ─────────────── Type ─────────────── */
 :root {
-  --font-display: "Syne", "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-display: "Outfit", "Plus Jakarta Sans", system-ui, sans-serif;
   --font-body:    "Plus Jakarta Sans", -apple-system, system-ui, sans-serif;
   --font-mono:    "IBM Plex Mono", "SF Mono", ui-monospace, monospace;
 }
@@ -127,7 +127,7 @@ body { margin: 0; }
 }
 
 /* ─────────────── Atoms ─────────────── */
-.display { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.03em; line-height: 1.02; }
+.display { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.02em; line-height: 1.05; }
 .mono    { font-family: var(--font-mono); font-feature-settings: "tnum"; letter-spacing: 0; }
 
 button { font-family: inherit; cursor: pointer; border: 0; background: none; color: inherit; padding: 0; }

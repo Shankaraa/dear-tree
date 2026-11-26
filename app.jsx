@@ -3,7 +3,7 @@
 // ─────────────────────────────────────────────────────────────
 
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
-  "dark": false,
+  "dark": true,
   "treeMonth": 14,
   "persona": "family",
   "skipOnboarding": false
@@ -124,7 +124,7 @@ function DemoNote() {
       position: 'fixed', left: 16, bottom: 16, zIndex: 2147483645, maxWidth: 260,
       padding: '9px 14px', borderRadius: 14,
       background: 'rgba(30,45,34,.88)', color: '#FFFBF1',
-      font: '500 12px/1.4 "DM Sans", system-ui, sans-serif',
+      font: '500 12px/1.4 "Plus Jakarta Sans", system-ui, sans-serif',
     }}>
       <strong>Concept prototype.</strong> Sample data. No real trees are planted and no payments are taken.
     </div>
@@ -148,14 +148,10 @@ function Root() {
   }, []);
 
   return (
-    <div style={{
+    <div className={dark ? 'stage' : 'stage light'} style={{
       width: '100vw', height: '100vh',
-      background: dark
-        ? 'radial-gradient(circle at 30% 20%, #18221A 0%, #0A100C 80%)'
-        : 'radial-gradient(circle at 30% 20%, #F0E5CC 0%, #DFD2B5 80%)',
       display: 'flex', alignItems: 'center', justifyContent: 'center',
       overflow: 'hidden',
-      transition: 'background .4s ease',
     }}>
       <DemoNote/>
       <div style={{ transform: `scale(${scale})`, transformOrigin: 'center' }}>
@@ -189,7 +185,7 @@ function Root() {
                 flex: 1, padding: '7px 0', borderRadius: 8,
                 background: tweaks.treeMonth === opt.m ? '#2F6A3F' : 'rgba(0,0,0,0.06)',
                 color: tweaks.treeMonth === opt.m ? '#FFFBF1' : 'inherit',
-                fontFamily: 'JetBrains Mono, monospace', fontSize: 10, fontWeight: 600,
+                fontFamily: 'IBM Plex Mono, monospace', fontSize: 10, fontWeight: 600,
                 border: 0, cursor: 'pointer',
               }}>
                 m{opt.m}

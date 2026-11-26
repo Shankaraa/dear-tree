@@ -258,7 +258,7 @@ function PlantMap({ onPick, onSeeTiers }) {
         touchAction: 'none',
         cursor: dragRef.current ? 'grabbing' : 'grab',
       }}>
-        <div style={{ position: 'absolute', inset: 0, opacity: .96 }}>
+        <div className="map-tiles" style={{ position: 'absolute', inset: 0, opacity: .96 }}>
           {tiles.map(tile => (
             <img
               key={tile.key}
@@ -388,7 +388,7 @@ function PlantMap({ onPick, onSeeTiers }) {
         position: 'absolute', top: STATUS_PAD + 88, left: 12, right: 56,
         zIndex: 10, display: 'grid', gridTemplateColumns: '1fr 1fr',
         gap: 6, padding: 4, borderRadius: 999,
-        background: 'rgba(255,251,241,.86)', backdropFilter: 'blur(8px)',
+        background: 'color-mix(in srgb, var(--surface) 88%, transparent)', backdropFilter: 'blur(8px)',
         border: '1px solid var(--line)', boxShadow: 'var(--shadow-sm)',
       }}>
         {Object.entries(MAP_REGIONS).map(([id, meta]) => {

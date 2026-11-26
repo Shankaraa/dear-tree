@@ -51,7 +51,7 @@ What you can click through today:
 | **Registry** | A public directory of every named tree |
 | **Groups and CSR** | Schools, classes and companies planting together |
 
-On a desktop, tap **Tweaks** (bottom right) to switch to dark mode or scrub a tree from month 1 to month 24.
+On a desktop, tap **Tweaks** (bottom right) to switch between dark and light or scrub a tree from month 1 to month 24.
 
 <table>
 <tr>
@@ -64,14 +64,14 @@ On a desktop, tap **Tweaks** (bottom right) to switch to dark mode or scrub a tr
 <br/><sub>Pick a spot · the public registry · your profile</sub>
 <br/><br/>
 <img src="docs/screens-dark.png" alt="Garden and tree page in dark mode" width="72%"/>
-<br/><sub>Dark mode</sub>
+<br/><sub>Dark mode (the default)</sub>
 </td>
 </tr>
 </table>
 
 Place names in the sample data (parks, bus stands) are real locations used for illustration only. There are no partnerships with any of them.
 
-**Shareable demo links:** add `?skip=1` to jump past onboarding, `&month=24` to see a tree on naming day, `&dark=1` for dark mode. For example: [naming day in dark mode](https://shankaraa.github.io/dear-tree/?skip=1&month=24&dark=1).
+**Shareable demo links:** add `?skip=1` to jump past onboarding, `&month=24` to see a tree on naming day, `&dark=0` for light mode (dark is the default). For example: [naming day in light mode](https://shankaraa.github.io/dear-tree/?skip=1&month=24&dark=0).
 
 ## Run it locally
 

@@ -246,7 +246,7 @@ function TagScanner({ onClose }) {
         transparent
         right={<button onClick={onClose} aria-label="Close" style={{
           width: 38, height: 38, borderRadius: 999,
-          background: 'rgba(255,251,241,0.85)',
+          background: 'color-mix(in srgb, var(--surface) 90%, transparent)',
           backdropFilter: 'blur(8px)',
           border: '1px solid rgba(255,251,241,.32)',
           display: 'flex', alignItems: 'center', justifyContent: 'center',

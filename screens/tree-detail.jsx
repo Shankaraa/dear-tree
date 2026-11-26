@@ -23,13 +23,13 @@ function TreeDetail({ month, setMonth, onBack, onClaimTag }) {
       {/* Hero photo */}
       {/* clip top/sides only, so the info card can hang below the photo */}
       <div style={{ position: 'relative', height: 380, clipPath: 'inset(0 0 -200px 0)', zIndex: 1,
-        background: 'linear-gradient(180deg, #C9DEC6 0%, #DFCFA5 55%, #BFA77F 100%)' }}>
+        background: 'linear-gradient(180deg, var(--leaf-soft) 0%, var(--leaf-pale) 55%, var(--marigold-soft) 100%)' }}>
         {/* sun */}
         <div style={{
           position: 'absolute', top: 78, right: 50,
           width: 90, height: 90, borderRadius: '50%',
-          background: 'radial-gradient(circle, #F8E5B0 0%, #E0A02B 60%, transparent 78%)',
-          opacity: 0.85,
+          background: 'radial-gradient(circle, var(--marigold-soft) 0%, var(--marigold) 60%, transparent 78%)',
+          opacity: 0.9,
         }}/>
         {/* horizon stripes */}
         <div style={{ position: 'absolute', inset: 0, opacity: 0.18,
@@ -248,7 +248,7 @@ function TreeDetail({ month, setMonth, onBack, onClaimTag }) {
 
 const iconBtnBlur = {
   width: 38, height: 38, borderRadius: 999,
-  background: 'rgba(255,251,241,0.85)',
+  background: 'color-mix(in srgb, var(--surface) 90%, transparent)',
   backdropFilter: 'blur(8px)',
   border: '1px solid var(--line)',
   display: 'flex', alignItems: 'center', justifyContent: 'center',

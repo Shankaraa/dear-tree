@@ -55,7 +55,7 @@ function Garden({ onOpenTree, onOpenPlant, onOpenScan, mainTreeMonth, persona })
             </div>
             <div style={{
               position: 'absolute', top: 14, right: 14,
-              background: 'rgba(255,251,241,0.92)',
+              background: 'color-mix(in srgb, var(--surface) 90%, transparent)',
               backdropFilter: 'blur(8px)',
               padding: '6px 10px', borderRadius: 999,
               fontFamily: 'var(--font-mono)', fontSize: 10.5,

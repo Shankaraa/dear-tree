@@ -109,7 +109,7 @@ function HeroArt({ variant }) {
         {/* ground */}
         <div style={{
           position: 'absolute', left: 0, right: 0, bottom: 0, height: '32%',
-          background: 'linear-gradient(to bottom, var(--terra-pale), var(--terra-soft))',
+          background: 'linear-gradient(to bottom, var(--leaf-pale), var(--leaf-soft))',
           borderRadius: '50% 50% 0 0 / 30% 30% 0 0',
         }}/>
         {/* sapling */}

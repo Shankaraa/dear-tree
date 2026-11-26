@@ -1,90 +1,116 @@
 /* ─────────────────────────────────────────────────────────────
    Dear Tree — design tokens
-   Warm folk-modern · leafy green primary · marigold + terracotta
+   Night garden · emerald + lime glow · rose and sky accents · Outfit headings
    ───────────────────────────────────────────────────────────── */
 
 :root,
 .theme-light {
-  /* surfaces */
-  --bg:           #F6EFE0;   /* warm cream */
-  --bg-deep:      #EDE3CF;
-  --surface:      #FFFBF1;
-  --surface-2:    #F1E8D2;
-  --surface-soft: #EBE0C6;
+  /* surfaces: cool mist */
+  --bg:           #EDF3EE;
+  --bg-deep:      #DDE8E0;
+  --surface:      #FFFFFF;
+  --surface-2:    #E3ECE6;
+  --surface-soft: #D3E0D7;
 
   /* ink */
-  --ink:          #1F2A20;
-  --ink-soft:     #3A4A3E;
-  --ink-mute:     #58654F;
-  --ink-faint:    #A39C84;
+  --ink:          #0B1F18;
+  --ink-soft:     #2B4A3F;
+  --ink-mute:     #4A665B;
+  --ink-faint:    #8FA79B;
 
   /* lines */
-  --line:         rgba(31,42,32,0.10);
-  --line-strong:  rgba(31,42,32,0.22);
+  --line:         rgba(11,31,24,0.10);
+  --line-strong:  rgba(11,31,24,0.22);
 
-  /* brand */
-  --leaf:         #2F6A3F;
-  --leaf-deep:    #1F4A2C;
-  --leaf-soft:    #C9DEC6;
-  --leaf-pale:    #E6EFD8;
+  /* brand: emerald, lime, rose, sky */
+  --leaf:         #0A7A5C;
+  --leaf-deep:    #06503B;
+  --leaf-soft:    #BFE6D6;
+  --leaf-pale:    #DDF3E9;
 
-  --marigold:     #E0A02B;
-  --marigold-soft:#F5DA9F;
-  --marigold-pale:#FBEFC9;
+  --marigold:     #6E9400;   /* lime (olive on light for contrast) */
+  --marigold-soft:#DDF08F;
+  --marigold-pale:#F0F9C9;
 
-  --terra:        #C25E3F;
-  --terra-soft:   #ECC0A8;
-  --terra-pale:   #F4DDCD;
+  --terra:        #E5365F;   /* rose */
+  --terra-soft:   #FFC6D3;
+  --terra-pale:   #FFE4EA;
 
-  --sky:          #4D86A4;
-  --sky-soft:     #C5DBE6;
+  --sky:          #2F7DEB;
+  --sky-soft:     #C7DCFB;
 
-  --shadow-sm: 0 1px 2px rgba(31,42,32,.06), 0 2px 6px rgba(31,42,32,.04);
-  --shadow-md: 0 2px 6px rgba(31,42,32,.08), 0 8px 24px rgba(31,42,32,.06);
-  --shadow-lg: 0 8px 20px rgba(31,42,32,.10), 0 20px 60px rgba(31,42,32,.10);
+  --shadow-sm: 0 1px 2px rgba(11,31,24,.06), 0 2px 6px rgba(11,31,24,.05);
+  --shadow-md: 0 2px 6px rgba(11,31,24,.08), 0 8px 24px rgba(11,31,24,.07);
+  --shadow-lg: 0 8px 20px rgba(11,31,24,.10), 0 20px 60px rgba(11,31,24,.12);
 }
 
 .theme-dark {
-  --bg:           #131C16;
-  --bg-deep:      #0C140F;
-  --surface:      #1B2620;
-  --surface-2:    #232F26;
-  --surface-soft: #28342B;
+  /* night garden */
+  --bg:           #07130F;
+  --bg-deep:      #040C09;
+  --surface:      #0F211A;
+  --surface-2:    #153026;
+  --surface-soft: #1B3B2F;
 
-  --ink:          #F2E9D4;
-  --ink-soft:     #D7CDB6;
-  --ink-mute:     #9CA993;
-  --ink-faint:    #6B7869;
+  --ink:          #EAF6EF;
+  --ink-soft:     #C5DCD0;
+  --ink-mute:     #8FB0A0;
+  --ink-faint:    #5C7D6D;
 
-  --line:         rgba(242,233,212,0.10);
-  --line-strong:  rgba(242,233,212,0.22);
+  --line:         rgba(234,246,239,0.10);
+  --line-strong:  rgba(234,246,239,0.22);
 
-  --leaf:         #6DBD7D;
-  --leaf-deep:    #93D49F;
-  --leaf-soft:    #2C4A33;
-  --leaf-pale:    #1F3225;
+  --leaf:         #4FE0A8;   /* mint */
+  --leaf-deep:    #8CF0C8;
+  --leaf-soft:    #12392B;
+  --leaf-pale:    #0E2A20;
 
-  --marigold:     #F0BA52;
-  --marigold-soft:#5A4318;
-  --marigold-pale:#3A2D10;
+  --marigold:     #C8F169;   /* lime glow */
+  --marigold-soft:#3A4A12;
+  --marigold-pale:#26300C;
 
-  --terra:        #E2876B;
-  --terra-soft:   #56311F;
-  --terra-pale:   #3A2014;
+  --terra:        #FF7A9C;   /* rose */
+  --terra-soft:   #5A1F31;
+  --terra-pale:   #3B1520;
 
-  --sky:          #88B6CA;
-  --sky-soft:     #1F3340;
+  --sky:          #7FB2FF;
+  --sky-soft:     #16294A;
 
-  --shadow-sm: 0 1px 2px rgba(0,0,0,.4), 0 2px 6px rgba(0,0,0,.3);
-  --shadow-md: 0 2px 6px rgba(0,0,0,.5), 0 8px 24px rgba(0,0,0,.35);
-  --shadow-lg: 0 8px 20px rgba(0,0,0,.5), 0 20px 60px rgba(0,0,0,.4);
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.45), 0 2px 6px rgba(0,0,0,.35);
+  --shadow-md: 0 2px 6px rgba(0,0,0,.55), 0 8px 24px rgba(0,0,0,.4);
+  --shadow-lg: 0 8px 20px rgba(0,0,0,.55), 0 20px 60px rgba(0,0,0,.45);
+}
+
+/* Dark-mode map: invert the light OpenStreetMap tiles so the map sits in the theme */
+.theme-dark .map-tiles { filter: invert(1) hue-rotate(180deg) saturate(.55) brightness(.82) contrast(.92); }
+
+/* Page backdrop behind the phone: soft colour blobs plus a little grain */
+.stage {
+  position: relative;
+  background:
+    radial-gradient(55vmax 45vmax at 12% 8%,  rgba(200,241,105,.24), transparent 60%),
+    radial-gradient(50vmax 45vmax at 92% 88%, rgba(79,224,168,.28),  transparent 60%),
+    radial-gradient(38vmax 38vmax at 85% 6%,  rgba(255,122,156,.18), transparent 60%),
+    #050E0B;
+  transition: background .4s ease;
+}
+.stage.light {
+  background:
+    radial-gradient(55vmax 45vmax at 12% 8%,  rgba(200,241,105,.45), transparent 60%),
+    radial-gradient(50vmax 45vmax at 92% 88%, rgba(79,224,168,.35),  transparent 60%),
+    radial-gradient(38vmax 38vmax at 85% 6%,  rgba(255,160,185,.35), transparent 60%),
+    #E8F1EA;
+}
+.stage::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .07; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 /* ─────────────── Type ─────────────── */
 :root {
-  --font-display: "Bricolage Grotesque", "Georgia", serif;
-  --font-body:    "DM Sans", -apple-system, system-ui, sans-serif;
-  --font-mono:    "JetBrains Mono", "SF Mono", ui-monospace, monospace;
+  --font-display: "Outfit", "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-body:    "Plus Jakarta Sans", -apple-system, system-ui, sans-serif;
+  --font-mono:    "IBM Plex Mono", "SF Mono", ui-monospace, monospace;
 }
 
 * { box-sizing: border-box; }

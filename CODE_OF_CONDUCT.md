@@ -19,7 +19,7 @@ Dear Tree is built by people from very different backgrounds: students, professi
 
 ## Enforcement
 
-If something happens that makes you uncomfortable, contact the maintainers privately through a GitHub direct message to [@Shankaraa](https://github.com/Shankaraa) or by opening a confidential security advisory. Reports will be handled quietly and fairly.
+If something happens that makes you uncomfortable, report it privately to the maintainers using [GitHub's private reporting form](https://github.com/Shankaraa/dear-tree/security/advisories/new). Only the maintainers can see it. Reports will be handled quietly and fairly, and we will not share your name without your say-so.
 
 Maintainers may remove comments, close issues, or ban contributors who break this code.
 

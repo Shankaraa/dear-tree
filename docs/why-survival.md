@@ -29,7 +29,7 @@ Both are about compensatory afforestation plantations funded through CAMPA: gove
 ## How to read these numbers
 
 - They are **two states, specific years, government compensatory plantations**. Do not generalise to "most trees die" or to all planting.
-- The state's own CAMPA monitoring has reported higher figures (self-reported, and a TERI study of compensatory afforestation cites them). Different methods give different answers, which is itself a reason for independent, transparent survival reporting.
+- Self-reported monitoring by state authorities has reportedly shown higher figures; we have not verified those against a primary source. Different methods give different answers, which is itself a reason for independent, transparent survival reporting.
 - The auditors' explanations (maintenance, site choice, grazing) point at **care and place**, not species. That is the premise Dear Tree is built on.
 
 ## What we do not know

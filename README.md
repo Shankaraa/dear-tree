@@ -119,7 +119,7 @@ If you work on climate ML, remote sensing or computer vision, we would love your
 - [x] Clickable prototype of the full journey
 - [x] Vite build instead of in-browser Babel (fast first load)
 - [ ] Backend and public registry API
-- [ ] Tamper-evident registry log (hash-chained entries and published exports; a public chain only if it earns its place)
+- [ ] Tamper-evident registry log. Exploring options, none chosen yet: hash-chained entries with published exports, signed timestamps/anchoring of registry hashes, or a public blockchain. No chain code exists today, and no tokens or NFTs are planned. A blockchain only goes in if it clearly beats the simpler options.
 - [ ] UPI payments, including monthly care by UPI AutoPay released only while a tree is alive (see [the concept note](docs/upi-concept.md))
 - [ ] Steward app: monthly photo check-ins
 - [ ] QR / NFC tag scanning

@@ -7,10 +7,13 @@ Thanks for being here. Whether this is your first pull request or your hundredth
 ```bash
 git clone https://github.com/<your-username>/dear-tree.git
 cd dear-tree
-python -m http.server 8000
+npm install
+npm run dev
 ```
 
-Open <http://localhost:8000>. Edit any `.jsx` file and refresh the page. There is no build step yet.
+You need Node.js 20 or newer. Open the address Vite prints (usually <http://localhost:5173>). Edits to any `.jsx` file show up instantly.
+
+The screens share some globals (`useState`, `ICON`, `Pill`, ...) that `globals.js` and each file's `window.X = ...` lines provide. In new code you can use normal `import` and `export`; just add the file to `main.jsx`.
 
 ## Finding something to work on
 
@@ -26,7 +29,7 @@ Comment on an issue to claim it, so two people don't build the same thing.
 1. Fork the repo and create a branch: `git checkout -b fix/garden-card-overlap`
 2. Keep the change focused. One fix or feature per PR.
 3. Check it in light **and** dark mode, using the tweaks panel.
-4. Run the smoke test (needs `pip install playwright`): `python tests/smoke.py`. It also runs automatically on every pull request.
+4. Run the smoke test: `npm run build`, then `pip install playwright && playwright install chromium`, then `python tests/smoke.py`. It also runs automatically on every pull request.
 5. Open a pull request saying what you changed and why. A screenshot helps a lot for UI changes.
 
 ## Style

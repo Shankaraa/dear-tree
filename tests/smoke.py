@@ -1,7 +1,8 @@
 """Smoke test: every screen of the demo loads without a JavaScript error.
 
-Serves the repo files through Playwright request routing, so no web server is needed.
+Serves the production build (dist/) through Playwright request routing, so no web server is needed.
 
+    npm ci && npm run build
     pip install playwright && playwright install chromium
     python tests/smoke.py            # CI / any machine with Playwright's Chromium
     BROWSER_CHANNEL=chrome python tests/smoke.py   # use installed Chrome instead
@@ -9,7 +10,7 @@ Serves the repo files through Playwright request routing, so no web server is ne
 import mimetypes, os, pathlib, sys
 from playwright.sync_api import sync_playwright
 
-ROOT = pathlib.Path(__file__).resolve().parent.parent
+ROOT = pathlib.Path(__file__).resolve().parent.parent / "dist"
 BASE = "http://dear-tree.test/"
 
 
@@ -17,13 +18,15 @@ def serve(route):
     rel = route.request.url[len(BASE):].split("?")[0] or "index.html"
     f = ROOT / rel
     if f.is_file():
-        ctype = "text/babel" if f.suffix == ".jsx" else (mimetypes.guess_type(f.name)[0] or "application/octet-stream")
+        ctype = mimetypes.guess_type(f.name)[0] or "application/octet-stream"
         route.fulfill(status=200, body=f.read_bytes(), headers={"content-type": ctype})
     else:
         route.fulfill(status=404, body="")
 
 
 def main():
+    if not (ROOT / "index.html").is_file():
+        sys.exit("dist/ not found. Run `npm ci && npm run build` first.")
     channel = os.environ.get("BROWSER_CHANNEL")
     failures = []
     with sync_playwright() as p:

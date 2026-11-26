@@ -33,7 +33,7 @@ Dear Tree is a simple idea: **you don't need to own land to dedicate a tree.** T
 
 In the finished service, each tree would get a public registry ID, so anyone walking past could scan its tag and read who it is for.
 
-The point isn't the number of trees planted. It's the number that **survive**. That's why the whole app is built around the two-year journey instead of the moment you pay.
+The point isn't the number of trees planted. It's the number that **survive**. (In one CAG audit of Uttarakhand's compensatory plantations, average survival was 33.5% against a 60-65% target. [Sources and caveats](docs/why-survival.md).) That's why the whole app is built around the two-year journey instead of the moment you pay.
 
 ## Where it is now
 
